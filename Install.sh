@@ -17,7 +17,7 @@ UpdateAndUpgrade()
     sudo apt update && sudo apt upgrade 
 }
 
-NassieCheckAndGettingInfo()
+NassieCheckAndGettingFile()
 {
     ping -c 3 $Nassie > /dev/null 2>&1
         if [ $? -eq 3 ]
@@ -25,12 +25,17 @@ NassieCheckAndGettingInfo()
             echo "Using Nas instead of Git"
         else 
             echo "Nas cannot be reached so will use Git instead"
+            wget 
         fi 
 }
 
 
     if [ $LSB_Release == "Pop" ]; then
     #UpdateAndUpgrade
+    NassieCheckAndGettingFile
+
+    #install with the list included and got from git or nas
+    xargs -a List.txt sudo apt install -y
 
     elif [ $LSB_Release == "Ubuntu" ]; then
         echo "Ubuntu"  
