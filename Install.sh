@@ -23,9 +23,11 @@ NassieCheckAndGettingFile()
         if [ $? -eq 3 ]
         then 
             echo "Using Nas instead of Git"
+            wget $Nassie/DataJeff/List.txt
         else 
             echo "Nas cannot be reached so will use Git instead"
-            wget 
+            #testing branch list
+            wget https://raw.githubusercontent.com/Jeffrey44113/BashInstalllPackages/Testerbranch/List.txt 
         fi 
 }
 
@@ -37,10 +39,14 @@ NassieCheckAndGettingFile()
     #install with the list included and got from git or nas
     xargs -a List.txt sudo apt install -y
 
+    
     elif [ $LSB_Release == "Ubuntu" ]; then
         echo "Ubuntu"  
         UpdateAndUpgrade
-    
+
+        NassieCheckAndGettingFile
+
+
     else
         echo "Not supported OS "
     fi
