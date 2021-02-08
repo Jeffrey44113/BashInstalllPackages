@@ -62,6 +62,15 @@ NassieCheckAndGettingFile()
         fi 
 }
 
+RaspBerryPiConfig()
+{
+    #Random Hostname: Pi... Random. 
+
+
+    #Random IP between 32 - 45 
+
+}
+
 
     if [ $LSB_Release == "Pop" ]; then
 
