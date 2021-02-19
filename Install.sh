@@ -37,8 +37,6 @@ NassieCheckAndGettingFile()
                  #Default is List 
                  wget $Nassie/DataJeff/List.txt
             fi
-            
-            
 
         else
 
@@ -68,6 +66,7 @@ RaspBerryPiConfig()
 
 
     #Random IP between 32 - 45 
+    IP=$(shuf -i 32-45 -n 1)
 
 }
 
