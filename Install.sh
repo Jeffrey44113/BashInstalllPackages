@@ -67,6 +67,15 @@ RaspBerryPiConfig()
 
     #Random IP between 32 - 45 
     IP=$(shuf -i 32-45 -n 1)
+    HostNum=$(shuf -i 15-99 -n 1)
+    HostNamePi="Pi-$HostNum"
+
+    #set hostname in /etc/hostname
+    echo $HostNamePi > /etc/hostname
+
+    
+
+
 
 }
 
@@ -102,6 +111,11 @@ RaspBerryPiConfig()
         #Using Xargs since that should be possible, lets test. 
         xargs -a ListPi.txt sudo apt install -y 
 
+
+        #ConfigTime!
+        RaspBerryPiConfig
+
     else
         echo "Not supported OS "
+        exit 0 
     fi
