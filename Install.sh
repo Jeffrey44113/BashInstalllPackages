@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 
 #Everything installed: sudo apt list --installed |awk -F/ '{print $1}' 
 
