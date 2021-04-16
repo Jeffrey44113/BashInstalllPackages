@@ -7,6 +7,7 @@ InstallState=0
 LSB_Release=$(lsb_release -si)
 Nassie='jplacenassie.local'
 
+Google='google.com'
 
 #Something for in the future
 ServerOrClient=0
@@ -96,4 +97,8 @@ NassieCheckAndGettingFile()
 
     else
         echo "Not supported OS "
+         ping -c 3 $Nassie > /dev/null 2>&1
+         if [ $? -eq 3 ];then 
+            echo "All good"
+         fi 
     fi
