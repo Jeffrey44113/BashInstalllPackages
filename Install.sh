@@ -73,10 +73,6 @@ RaspBerryPiConfig()
     #set hostname in /etc/hostname
     echo $HostNamePi > /etc/hostname
 
-    
-
-
-
 }
 
 
