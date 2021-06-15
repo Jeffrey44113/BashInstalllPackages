@@ -1,6 +1,12 @@
 ---
 - name: My task
-  hosts: pi
+  hosts: db
   tasks:
-     - name: just a little touch
-       command: "touch /tmp/little_touch"
+    - name: just a little touch
+      command: "touch /tmp/little_touch"
+
+    - name: step number 2 install mysql
+      yum:
+        name: mysql
+        state: present
+    
