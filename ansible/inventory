@@ -1,0 +1,13 @@
+#AppServers
+[app]
+app.test
+app1.test
+
+#DBServers
+[db]
+db.test
+
+#group the servers
+[multi:children]
+app
+db

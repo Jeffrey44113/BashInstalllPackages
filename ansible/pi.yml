@@ -1,0 +1,6 @@
+---
+- name: My task
+  hosts: pi
+  tasks:
+     - name: just a little touch
+       command: "touch /tmp/little_touch"
