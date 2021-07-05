@@ -1,7 +1,6 @@
 #AppServers
 [app]
-app.test
-app1.test
+192.168.0.66
 
 #DBServers
 [db]
